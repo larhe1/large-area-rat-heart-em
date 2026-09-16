@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+	<style>
+            #openseadragon1{width: 1024px; height: 1024px;}
+	    *{color: orange;}
+	    *{font-weight: bold;}
+	    *{font-family: 'Arial';}
+        </style>
+        <script src="openseadragon/openseadragon.min.js"></script>
+	<script src="OpenSeadragonScalebar-master/openseadragon-scalebar.js"></script>
+    </head>
+    <body>
+        <div id="openseadragon1"></div>
+	<div id="Description">ZASADNY et al.<br><br>***without Tile Set labels***<br>Description:<br>Stitched image grid<br>(32x11) of Rat<br>Myocardium that is<br>immunogold labeled<br>for Connexin 43<br>(10nm gold particles)<br>and GRP75 (5nm gold<br>particles). Cx43 is<br>well labeled.</div>
+	<script type="text/javascript">
+            var viewer = OpenSeadragon({
+		id: "openseadragon1",
+		prefixUrl: "openseadragon/images/",
+		tileSources: "https://f005.backblazeb2.com/file/large-area-rat-heart-em/TILE_SET_8.dzi",
+		showNavigator: true,
+		overlays: [{id:'Description', x: -0.22, y: 0.3, placement: 'TOP', checkResize: false}]
+                });
+		viewer.scalebar({pixelsPerMeter: 333333333.33333333333333333333333, barThickness: 2, xOffset: 100, yOffset: 75,
+				location: OpenSeadragon.ScalebarLocation.BOTTOM_LEFT, color: "rgb(0,0,255)", fontColor: "rgb(0,0,255)"});
+	</script>
+    </body>
+</html>
